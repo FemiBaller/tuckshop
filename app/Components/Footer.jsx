@@ -20,7 +20,8 @@ const Footer = () => {
           </div>
         <div className="flex items-center gap-5">
           <MdEmail />
-          <p>Emai: info@Tolteminternational</p></div>
+          <a href="mailto:info@Tolteminternational"><p>Email: info@Tolteminternational</p></a>
+          </div>
           <div className="flex items-center gap-5">
             <FaAddressCard />
             <p>Address: ilesha garage, Akure city</p></div>
