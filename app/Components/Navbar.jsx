@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { MdOutlineMenu, MdClose } from "react-icons/md";
 
@@ -11,13 +12,10 @@ const Navbar = () => {
 
   useEffect(() => {
     if (menu) {
-      // Disable scrolling
       document.body.style.overflow = 'hidden';
     } else {
-      // Enable scrolling
       document.body.style.overflow = 'auto';
     }
-    // Cleanup function to revert the changes if the component unmounts
     return () => {
       document.body.style.overflow = 'auto';
     };
@@ -25,14 +23,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed w-full top-0 z-50 flex items-center justify-between h-24 px-[10rem] border-b border-gray-200 shadow-sm bg-white lg:px-[5rem]">
-        <div onClick={toggleMenu}>
-          <h1 className="text-2xl">
-            <a href="#hero">Tuckshop</a>
-          </h1>
-        </div>
+      <nav className="fixed w-full top-0 z-50 flex items-center justify-between h-24 px-5 sm:px-20 border-b border-gray-200 shadow-sm bg-white">
+        <Link href='/'><h1 className="text-xl sm:text-4xl font-semibold">Tuckshop</h1></Link>
         <div>
-          <ul className="large:hidden flex gap-8 font-medium text-stone-500 text-lg lg:text-base">
+          <ul className="hidden lg:flex gap-8 font-medium text-stone-500 text-lg">
             <li className="cursor-pointer transition duration-300 ease-in-out">
               <a
                 href="#modules"
@@ -60,14 +54,14 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-          <div className=" hidden large:block" onClick={toggleMenu}>
+          <div className="lg:hidden" onClick={toggleMenu}>
             {menu ? (
               <MdClose className="h-8 w-8 text-gray-700" />
             ) : (
               <MdOutlineMenu className="h-8 w-8 text-gray-700" />
             )}
           </div>
-          <button className=" large:hidden bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium lg:text-base hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out">
+          <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out">
             Book Appointment
           </button>
         </div>
@@ -77,7 +71,7 @@ const Navbar = () => {
         <div className="flex justify-end p-4">
           <MdClose className="h-8 w-8 text-gray-700" onClick={toggleMenu} />
         </div>
-        <div className="flex flex-col items-center justify-center h-full space-y-8 text-lg text-stone-500">
+        <div className="flex flex-col items-center pt-20 h-full space-y-8 text-lg text-stone-500">
           <a
             href="#modules"
             className="block text-gray-700 hover:text-purple-600 hover:underline"
@@ -100,7 +94,7 @@ const Navbar = () => {
             Contact us
           </a>
           <button
-            className="bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium lg:text-base hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out"
+            className="bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out"
             onClick={toggleMenu}
           >
             Book Appointment

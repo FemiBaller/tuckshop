@@ -6,40 +6,30 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <section id="contact" className=" bg-[ #FFFFF0]  w-full text-gray-400 px-[10rem] py-[3rem]  
-     md:px-[3rem] large:px-[5rem] tablet:px-[3rem] ">
-
-      
-      <div className=" mb-16">
+    <section id="contact" className="bg-[#FFFFF0] w-full text-gray-600 px-5 sm:px-20 py-10 mt-24">
+      <div className="mb-6">
         <div>
-          <p className="text-3xl mb-20">
-            <a href="#hero">Tuckshop</a>
-          </p>
+          <p className="text-2xl mb-6 font-semibold">Tuckshop</p>
         </div>
-
-        <div >
-         
-          <p  className="mb-[2rem] font-bold">Contact Us</p>
-          <div  className="flex flex-col gap-5">
-          <div className="flex items-center gap-5"> 
-            <FaSquarePhone />
-            <p>Phone : 0906783837</p></div>
+        <div>
+          <p className="mb-4 font-bold">Contact Us</p>
+          <div className="flex flex-col gap-5">
+            <div className="flex items-center gap-5"> 
+              <FaSquarePhone />
+            <p>Phone : 0906783837</p>
+          </div>
         <div className="flex items-center gap-5">
           <MdEmail />
           <p>Emai: info@Tolteminternational</p></div>
-        <div className="flex items-center gap-5">
-          <FaAddressCard />
-          <p>Address: ilesha garage, Akure city</p></div>
-        </div>
+          <div className="flex items-center gap-5">
+            <FaAddressCard />
+            <p>Address: ilesha garage, Akure city</p></div>
           </div>
-     
-
-        
+        </div>
       </div>
-
-      <div className="w-full border-2 border-gray-200 mb-10"></div>
+      <div className="w-full border border-gray-200 mb-5"></div>
       <div>
-        <p className="text-center">Copyright © 2024 Toltem Ineternational. All right reserved</p>
+        <p className="text-center text-base">Copyright © 2024 Toltem Ineternational. All right reserved</p>
       </div>
     </section>
   );
