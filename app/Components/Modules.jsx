@@ -30,7 +30,7 @@ export const OurModules = () => {
   ]
 
   return (
-    <section id="modules" className="w-full mt-28 px-5 sm:px-20">
+    <section id="modules" className="w-full min-h-[70vh] pb-16 mt-28 px-5 sm:px-20">
       <p className="font-bold text-2xl sm:text-5xl text-stone-500 mb-8">Our Modules</p>
       <div className="w-full flex flex-col gap-8">
         {
