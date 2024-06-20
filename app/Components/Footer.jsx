@@ -24,7 +24,7 @@ const Footer = () => {
             <div className="flex items-center gap-5">
               <MdEmail />
               <a href="mailto:info@Tolteminternational">
-                <p>Email: info@toltemtech.ng</p>
+                <p>Email: info@toltemtech.com.ng</p>
               </a>
             </div>
             <div className="flex items-center gap-5">

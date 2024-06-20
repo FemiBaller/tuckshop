@@ -43,7 +43,7 @@ export const OurModules = () => {
                 <h4 className="font-bold text-lg sm:text-3xl text-black mb-6">
                   {module.title}
                 </h4>
-                <p className="font-normal text-base sm:text-lg text-stone-400 leading-normal">
+                <p className="font-normal text-base sm:text-lg text-stone-400 leading-normal text-center">
                   {module.content}
                 </p>
               </div>

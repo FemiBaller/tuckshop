@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/Components/Navbar";
 import Footer from "@/app/Components/Footer";
+import BookAppointment from "./contexts/BookAppointment";
 
 const poppins = Poppins({ 
   subsets: ["latin"],
@@ -17,11 +18,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={poppins.className} >
-        <div className="bg-neutral-50 w-full overflow-hidden">
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <BookAppointment>
+          <div className="bg-neutral-50 w-full overflow-hidden">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </BookAppointment>
       </body>
     </html>
   );

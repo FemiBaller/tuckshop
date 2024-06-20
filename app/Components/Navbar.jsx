@@ -2,9 +2,11 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { MdOutlineMenu, MdClose } from "react-icons/md";
+import { useCalendar } from "../contexts/BookAppointment";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const {handleBookAppointment} = useCalendar();
 
   const toggleMenu = () => {
     setMenu(!menu);
@@ -61,7 +63,7 @@ const Navbar = () => {
               <MdOutlineMenu className="h-8 w-8 text-gray-700" />
             )}
           </div>
-          <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out">
+          <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleBookAppointment}>
             Book Appointment
           </button>
         </div>
@@ -95,7 +97,7 @@ const Navbar = () => {
           </a>
           <button
             className="bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out"
-            onClick={toggleMenu}
+            onClick={handleBookAppointment}
           >
             Book Appointment
           </button>
