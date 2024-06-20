@@ -1,14 +1,15 @@
 import React from "react";
 
-// Image import
-import BgImage from '@/app/img/school.jpg';
 
 function Hero() {
+  const heroImage = "../img/school.jpg"
+
   return (
     <section 
       id="hero"
-      className=" h-[calc(100vh-96px)] max-h-[600px] max-w-full flex items-center justify-center pt-20 px-5 lg:px-20"
-      style={{backgroundImage: `url(${BgImage})`}}
+      className=" h-screen max-h-[650px] max-w-full flex items-center justify-center pt-20 px-5 lg:px-20"
+     style={{backgroundImage:`url(${heroImage})` , backgroundSize: "cover"} }
+       
       >
       <div className="w-full px-3 sm:px-8 lg:px-24">
         <h2 className="font-bold text-3xl sm:text-6xl text-center w-full leading-tight capitalize">

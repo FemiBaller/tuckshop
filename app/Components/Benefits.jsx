@@ -36,7 +36,7 @@ const Benefits = () => {
   return (
     <section className="px-5 sm:px-20 max-w-full flex justify-center mt-28">
       <div>
-        <p className="font-bold text-2xl sm:text-5xl text-stone-500 mb-8 pr-2">Benefits our Tuck-Shop App</p>
+        <p className="font-bold text-2xl sm:text-5xl text-black mb-8 pr-2">Benefits our Tuck-Shop App</p>
         <div className="bg-white rounded-md max-w-full shadow-2xl grid md:grid-cols-2 px-5 md:px-10 justify-items-center gap-x-10 gap-y-10 py-5 md:py-20">
           {Features.map((feature) => (
             <div
