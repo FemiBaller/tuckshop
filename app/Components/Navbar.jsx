@@ -6,7 +6,7 @@ import { useCalendar } from "../contexts/BookAppointment";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  const {handleBookAppointment} = useCalendar();
+  const {isAppointment, setAppointment, handleBookAppointment} = useCalendar();
 
   const toggleMenu = () => {
     setMenu(!menu);
@@ -23,6 +23,14 @@ const Navbar = () => {
     };
   }, [menu]);
 
+  
+  const handleOpenModal = () => {
+    setAppointment(true)
+  }
+
+  const handleCloseModal = () => {
+    setAppointment(true)
+  }
   return (
     <>
       <nav className="fixed w-full top-0 z-50 flex items-center justify-between h-24 px-5 sm:px-20 border-b border-gray-200 shadow-sm bg-white">
@@ -63,9 +71,15 @@ const Navbar = () => {
               <MdOutlineMenu className="h-8 w-8 text-gray-700" />
             )}
           </div>
-          <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleBookAppointment}>
-            Book Appointment
-          </button>
+
+          <div>
+            {isAppointment && <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleBookAppointment}>
+              Book Appointment
+            </button>}
+            {!isAppointment && <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleBookAppointment}>
+              Book Appointment
+            </button>}
+          </div>
         </div>
       </nav>
 
