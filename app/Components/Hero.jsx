@@ -1,23 +1,26 @@
-import React from "react";
+"use client"
 
+import React from "react";
+import HeroImage from '@/public/assets/hero.jpg';
 
 function Hero() {
-  const heroImage = "../img/school.jpg"
+
+  console.log(HeroImage.src)
 
   return (
     <section 
       id="hero"
-      className=" h-screen max-h-[650px] max-w-full flex items-center justify-center pt-20 px-5 lg:px-20"
-     style={{backgroundImage:`url(${heroImage})` , backgroundSize: "cover"} }
+      className=" h-screen max-w-full pt-20"
+      style={{backgroundImage:`url(${HeroImage.src})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: "cover"}}
        
       >
-      <div className="w-full px-3 sm:px-8 lg:px-24">
-        <h2 className="font-bold text-3xl sm:text-6xl text-center w-full leading-tight capitalize">
-          Transform <span className="text-purple-700">school snack </span>
-          times with our <span className="text-purple-700">Tuck Shop App</span>
+      <div className="w-full h-full flex items-center justify-center flex-col bg-[#00000055] px-3 sm:px-8 lg:px-24">
+        <h2 className="font-bold text-3xl sm:text-6xl text-white text-center w-full leading-tight capitalize">
+          Transform <span className="text-white">school snack </span>
+          times with our <span className="text-white">Tuck Shop App</span>
         </h2>
 
-        <p className="text-center text-sm sm:text-lg mt-7 mb-4 text-stone-500">
+        <p className="text-center text-2xl sm:text-lg mt-7 mb-4 text-white ">
           Easy, convenient ordering for students' favorite treats!
         </p>
 

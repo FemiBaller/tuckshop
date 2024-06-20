@@ -30,7 +30,7 @@ const Card = [
     icon: <HiMiniShoppingCart />,
   },
   {
-    id: 4,
+    id: 5,
     title: "Asset Mangement ",
     text: "Money an electronic wallet for students to manage students spending.",
     icon: <TbAssetFilled />

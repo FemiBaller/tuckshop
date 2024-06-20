@@ -37,7 +37,7 @@ export const OurModules = () => {
           moduleComps.map((module) => (
             <div key={module.id} className="w-full grid lg:grid-cols-2 gap-5">
               <div className="max-h-[280px] ">
-                <Image src={module.image} className=" h-full w-full" />
+                <Image src={module.image} alt={module.title} className=" h-full w-full" />
               </div>
               <div className={`bg-white rounded-md shadow-md px-7 py-5 ${module.id % 2 === 0 ? '' : 'lg:-order-1'} max-h-[auto]`}>
                 <h4 className="font-bold text-lg sm:text-3xl text-black mb-6">
