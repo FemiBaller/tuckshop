@@ -6,7 +6,7 @@ import { useCalendar } from "../contexts/BookAppointment";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  const {isAppointment, setAppointment, handleBookAppointment} = useCalendar();
+  const {isAppointment, setAppointment} = useCalendar();
 
   const toggleMenu = () => {
     setMenu(!menu);
@@ -66,26 +66,26 @@ const Navbar = () => {
         <div className="flex items-center">
           <div className="lg:hidden" onClick={toggleMenu}>
             {menu ? (
-              <MdClose className="h-8 w-8 text-gray-700" />
+              <MdClose className="text-2xl sm:text-3xl text-gray-700" />
             ) : (
-              <MdOutlineMenu className="h-8 w-8 text-gray-700" />
+              <MdOutlineMenu className="text-2xl sm:text-3xl text-gray-700" />
             )}
           </div>
 
           <div>
-            {isAppointment && <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleBookAppointment}>
+            {isAppointment && <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleCloseModal}>
               Book Appointment
             </button>}
-            {!isAppointment && <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleBookAppointment}>
+            {!isAppointment && <button className="hidden lg:block bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleOpenModal}>
               Book Appointment
             </button>}
           </div>
         </div>
       </nav>
 
-      <div className={`fixed top-0 left-0 w-full h-screen bg-white z-40 transition-transform duration-300 ease-in-out ${menu ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 left-0 w-full h-screen lg:hidden bg-white z-40 transition-transform duration-300 ease-in-out ${menu ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex justify-end p-4">
-          <MdClose className="h-8 w-8 text-gray-700" onClick={toggleMenu} />
+          {/* <MdClose className="h-8 w-8 text-gray-700" onClick={toggleMenu} /> */}
         </div>
         <div className="flex flex-col items-center pt-20 h-full space-y-8 text-lg text-stone-500">
           <a
@@ -109,12 +109,14 @@ const Navbar = () => {
           >
             Contact us
           </a>
-          <button
-            className="bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out"
-            onClick={handleBookAppointment}
-          >
-            Book Appointment
-          </button>
+          <div>
+            {isAppointment && <button className="block lg:hidden bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleCloseModal}>
+              Book Appointment
+            </button>}
+            {!isAppointment && <button className="block lg:hidden bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleOpenModal}>
+              Book Appointment
+            </button>}
+          </div>
         </div>
       </div>
     </>

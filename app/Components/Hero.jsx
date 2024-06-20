@@ -20,11 +20,13 @@ function Hero() {
         }
       }
 
+
       document.addEventListener('mousedown', menuOutsideClick);
 
       return () => {
         document.removeEventListener('mousedown', menuOutsideClick);
       }
+
     }, []);
 
   return (
@@ -53,7 +55,7 @@ function Hero() {
       </div>
 
 
-      <div className={`w-full h-screen fixed left-0 bottom-0 top-0 bg-[#000000a4] flex items-center justify-center ${isAppointment ? 'scale-1' : 'scale-0'} transition-transform ease duration-500`}>
+      <div className={`w-full h-screen fixed left-0 bottom-0 top-0 bg-[#000000a4] flex items-center justify-center ${isAppointment ? 'scale-1' : 'scale-0'} transition-transform ease duration-500 z-[1111]`}>
         <div ref={containerRef} className="w-[1000px] max-w-[95%] h-[75%] bg-white overflow-hidden mt-[5.5rem] rounded-lg">
           <iframe
             src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0HNNygeKSFHyjKsryn4txV0KSyquw5Ckizi--R_Vjty7X78J1FNUa8yODRRf7-TNTGdg1qFEEo?gv=true"
