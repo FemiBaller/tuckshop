@@ -7,15 +7,10 @@ const BookAppointment = ({children}) => {
 
     const [isAppointment, setAppointment] = useState(false);
 
-    const handleBookAppointment = () => {
-        setAppointment(true)
-      }
-
     return(
         <Context.Provider value={{
             isAppointment,
-            setAppointment,
-            handleBookAppointment
+            setAppointment
         }}>
             {children}
         </Context.Provider>

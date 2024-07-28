@@ -3,14 +3,40 @@
 import React, { useEffect, useRef } from "react";
 import HeroImage from '@/public/assets/hero.jpg';
 import { useCalendar } from "../contexts/BookAppointment";
+import { getCalApi } from "@calcom/embed-react";
+import tailwindConfig from "@/tailwind.config";
 
 function Hero() {
 
-  const {isAppointment, setAppointment, handleBookAppointment} = useCalendar();
+  const {isAppointment, setAppointment} = useCalendar();
 
   const containerRef = useRef(null);
 
     useEffect(() => {
+      (async function () {
+        const Cal = await getCalApi()
+        const colours = tailwindConfig.theme.extend.colors
+        Cal('ui', {
+          theme: 'auto',
+          hideEventTypeDetails: false,
+          cssVarsPerTheme: {
+            light: {
+              'cal-brand': colours.primary,
+              'cal-text': colours.primary,
+              'cal-text-emphasis': colours.primary,
+              'cal-border-emphasis': colours.primary,
+              'cal-text-error': 'rgb(239 68 68)',
+              'cal-border': colours.primary,
+              'cal-border-default': colours.primary,
+              'cal-border-subtle': colours.primary,
+              'cal-border-booker': colours.primary,
+              'cal-text-muted': 'rgb(163 163 163)',
+              'cal-bg-emphasis': 'rgb(163 163 163)'
+            }
+          }
+        })
+      })()
+      
       const menuOutsideClick = (e) => {
         if (!containerRef.current.contains(e.target)) {
           setAppointment(false);
@@ -20,12 +46,13 @@ function Hero() {
         }
       }
 
-
       document.addEventListener('mousedown', menuOutsideClick);
 
       return () => {
         document.removeEventListener('mousedown', menuOutsideClick);
       }
+
+      
 
     }, []);
 
@@ -46,8 +73,9 @@ function Hero() {
           Easy, convenient ordering for students' favorite treats!
         </p>
 
+
         <div className="flex justify-center gap-5">
-          <button className="bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" onClick={handleBookAppointment}>
+          <button className="bg-purple-600 py-3 px-6 rounded-md text-lg text-white font-medium hover:bg-purple-700 hover:shadow-lg transition duration-300 ease-in-out" data-cal-namespace="" data-cal-link={'toltemtech/30min'} data-cal-config='{"layout":"month_view"}'>
             Book Appointment
           </button>
         </div>
@@ -64,6 +92,7 @@ function Hero() {
           />
         </div>
       </div>
+  
 
 
     </section>
